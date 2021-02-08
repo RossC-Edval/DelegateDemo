@@ -1,24 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ShapeRenderer from './ShapeRenderer';
+import { SquareA } from './Shapes/SquareA';
+import { CircleB } from './Shapes/CircleB';
+import { BaseShape } from './Shapes/BaseShape';
 
 function App() {
+  const del1 = new BaseShape(new CircleB());
+  const del2 = new BaseShape(new SquareA());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ShapeRenderer delegate={del1}/>
+      <ShapeRenderer delegate={del2}/>
     </div>
   );
 }
